@@ -1,0 +1,270 @@
+/*   Theme default css */
+
+/* ======font family=========
+
+*/
+
+
+
+body {
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+a:focus,
+button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+a,
+button {
+  color: inherit;
+  outline: medium none;
+  text-decoration: none;
+}
+
+button:focus,
+input:focus,
+input:focus,
+textarea,
+textarea:focus {
+  outline: 0;
+}
+
+
+
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+
+.f-w100 {
+  width: 100%;
+}
+
+.side-icon {
+  position: fixed;
+  display: block;
+  right: 0;
+  top: 50%;
+  z-index: 9;
+  transform: translateY(-50%);
+}
+
+/* default-css END 
+================================== */
+
+
+
+/*============banner Area Start =============*/
+.banner-slider {
+  padding: 60px 0 40px;
+  background-size: cover;
+  margin-top: -5px;
+  background-size: cover;
+  margin-bottom: -1px;
+}
+
+
+
+.banner-slider a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1700px;
+  margin: auto;
+  border-radius: 36px;
+  overflow: hidden;
+  max-width: 89%;
+}
+
+.navStyle .owl-nav {
+  display: flex;
+  max-width: calc(100% - 80px);
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  width: 100%;
+  transform: translateY(-50%);
+  max-width: 110%;
+  left: -5%;
+  width: 110%;
+}
+
+.navStyle .owl-nav button {
+  width: 18px;
+}
+
+.dotStyle .owl-dot {
+  width: 12px;
+  height: 12px;
+  background: #7384C9 !important;
+  border-radius: 50%;
+}
+
+.dotStyle .owl-dot.active {
+  width: 30px;
+  border-radius: 10px;
+}
+
+.dotStyle .owl-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.banner-slider .owl-nav {
+  max-width: calc(100% - 80px);
+  left: 40px;
+}
+
+/*============banner Area End =============*/
+
+
+/*============card Area Start =============*/
+
+.card-area {
+  padding: 100px 0;
+}
+
+.all-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.all-cards a {
+  transition: all .3s;
+}
+
+.all-cards a:hover {
+  scale: 1.08;
+  filter: drop-shadow(2px -2px 14px #145B97);
+}
+
+/*============card Area End =============*/
+
+
+/*============casino Area Start =============*/
+.casino-area a.lg {
+  display: block;
+}
+
+.casino-area a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.casino-area a img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.casino-area {
+  margin-bottom: 80px;
+}
+.casino__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+/*============casino Area End =============*/
+
+
+/*============gallery Area Start =============*/
+.hpdrm-home-title {
+  border-bottom: 1px solid #394E7C;
+  padding-bottom: 15px;
+}
+
+.hpdrm-home-gallery {
+  margin-bottom: 50px;
+}
+
+.hpdrm-home-gallery a {
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  overflow: hidden;
+  transition: all .3s;
+}
+
+.hpdrm-home-gallery a:hover {
+  scale: 1.1;
+  filter: drop-shadow(0px -1px 7px #0D2551);
+}
+
+.hpdrm-home-gallery a:hover img.hpdrm-home-gallery-hover {
+  opacity: 1;
+}
+
+.hpdrm-home-gallery .owl-stage-outer {
+  padding: 50px 11px;
+  padding-right: 0;
+  margin-right: -25px;
+}
+
+img.hpdrm-home-gallery-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all .3s;
+}
+
+/*============gallery Area End =============*/
+
+
+
+
+
+
+
+
+
+/* Big screen :1200px. */
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .navStyle .owl-nav{
+    width: 106.5%;
+    left: -3%;
+}
+.container {
+  padding: 0 50px !important;
+}
+}
+
