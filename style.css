@@ -1,16 +1,22 @@
 /*   Theme default css */
 
 /* ======font family=========
-
+font-family: 'Helvetica Neue LT Pro';
 */
 
+:root{
+  --textColor: #7384C9;
+  --gdColor: linear-gradient(99deg, #1484D1 , #002186);
+}
 
 
 body {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   margin: 0;
   padding: 0;
+  color: var(--textColor);
+  font-family: 'Helvetica Neue LT Pro';
 }
 
 img {
@@ -80,6 +86,272 @@ li {
 ================================== */
 
 
+
+/*============header banner Area Start =============*/
+.header-area {background: url(./himages/header-img/header-bg.png);background-size: cover;background-position: center;}
+.header__info {display: flex;justify-content: space-between;background: #1C243B;padding: 0 50px;}
+
+.header__info a {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__info a img {height: 100%;object-fit: cover;}
+
+.header__info > a {
+    flex-shrink: 0;
+}
+
+.header__info ul {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+.header-top {display: flex;justify-content: space-between;padding: 20px 50px 30px;align-items: center;}
+.ht__left {display: flex;align-items: center;gap: 50px;width: 100%;}
+
+.ht__left ul li a:hover {
+    background: var(--gdColor);
+    border-color: #091c52;
+    color: #fff;
+}
+
+.ht__left ul {
+    display: flex;
+    gap: 10px;
+}
+
+.ht__left ul li a {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--textColor);
+    border-radius: 30px;
+    height: 41px;
+    width: 160px;
+    justify-content: center;
+    gap: 14px;
+}
+
+.ht__left ul li a:hover img {
+    filter: brightness(21.5);
+}
+
+.ht__left ul li a i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 19px;
+}
+
+.ht__left ul li a i img {
+    width: 100%;
+}
+.logo__area {flex-shrink: 0;max-width: 185px;}
+.ht__right {display: flex;gap: 10px;align-items: center;width: 100%;justify-content: end;}
+.social__link {flex-shrink: 0;width: 100%;max-width: 200px;display: flex;align-items: center;}
+
+.social__link li a i {
+    width: 21px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social__link li a svg {
+}
+
+.social__link li a {
+    width: 37px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.social__link li a:hover {
+    background: #fff;
+}
+
+.fb svg {width: 8px;height: 16px;}
+
+.fb:hover svg path {
+    fill: #1773EA;
+}
+.teli {
+}
+
+.teli:hover svg path {
+    fill: #0099E4;
+}
+.yt:hover svg path {fill: #FF0000;}
+.tx svg {width: 16px;}
+
+.tx:hover svg path {
+    fill: #000;
+}
+.insta svg {width: 16px;}
+
+.insta:hover svg path {
+    fill: #000;
+}
+.login__btns {display: flex;align-items: center;gap: 10px;}
+
+.login__btns {}
+
+.login__btns li a {
+    display: flex;
+    align-items: center;
+    width: 180px;
+    height: 42px;
+    justify-content: center;
+    gap: 16px;
+    background: linear-gradient(99deg, #1484D1 , #002186);
+    color: #fff;
+    border-radius: 26px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.login__btns li a:hover {
+  background-image: url(./himages/header-img/ht-top-bg.png);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 20px #205F93;
+}
+
+.Yap__btn {
+    background: none !important;
+    border: 1px solid var(--textColor);
+    color: var(--textColor) !important;
+}
+
+.Yap__btn i {
+    width: 29px !important;
+    height: 30px !IMPORTANT;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__btns li a i {
+    width: 19px;
+    height: 22px;
+}
+.main__menu {padding: 0 20px 10px;}
+
+.main__menu ul {
+    display: flex;
+    align-items: center;
+}
+
+.main__menu ul li {
+    width: 100%;
+}
+
+.main__menu ul li a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    height: 77px;
+    justify-content: center;
+    background: transparent;
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    transition: all .3s;
+}
+
+.main__menu ul li a:hover {
+    background: url(./himages/header-img/nav-btn-bg.png);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    box-shadow: 0 0 20px #205F93;
+}
+
+.main__menu ul li a:hover img {
+    filter: brightness(20.5);
+}
+
+.main__menu ul li a i {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header__btm {display: flex;justify-content: space-between;padding: 0px 50px;border-top: 1px solid #fff3;padding-bottom: 5px;}
+
+.header__btm ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    width: 190px;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    border-left: 1px solid #fff2;
+    border-right: 1px solid #fff2;
+}
+
+.header__btm ul li a:hover {
+    color: #fff;
+    background: linear-gradient(171deg, #62BCEA, #000E6E);
+    border-right: 1px solid #0008;
+}
+
+.header__btm ul li a:hover img {
+    filter: brightness(39.5);
+}
+
+.header__btm ul li a:before,.header__btm ul li a:after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    left: -3px;
+    top: 0;
+    background: linear-gradient(89deg, #0000008f, transparent);
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.header__btm ul li a:after {
+    left: auto;
+    right: 0px;
+    background: linear-gradient(270deg, #0000005e, transparent);
+    border-radius: 0;
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+    /* background: red; */
+}
+
+.header__btm ul li a i {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__btm ul li a i img {
+    width: 100%;
+    height: 100%;
+}
+
+.header__btm ul {
+    display: flex;
+    gap: 10px;
+}
+/*============header banner Area Start =============*/
 
 /*============banner Area Start =============*/
 .banner-slider {
