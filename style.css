@@ -19,6 +19,10 @@ body {
   font-family: 'Helvetica Neue LT Pro';
 }
 
+body.overly {
+    overflow: hidden;
+}
+
 img {
   max-width: 100%;
 }
@@ -101,6 +105,8 @@ li {
 
 
 
+
+
 /*============header banner Area Start =============*/
 .header-area {background: url(./himages/header-img/header-bg.png);background-size: cover;background-position: center;}
 .header__info {display: flex;justify-content: space-between;background: #1C243B;padding: 0 50px;}
@@ -164,6 +170,10 @@ li {
     width: 100%;
 }
 .logo__area {flex-shrink: 0;max-width: 185px;}
+
+.barBtn {
+    display: none;
+}
 .ht__right {display: flex;gap: 10px;align-items: center;width: 100%;justify-content: end;}
 .social__link {flex-shrink: 0;width: 100%;max-width: 200px;display: flex;align-items: center;}
 
@@ -278,6 +288,7 @@ li {
     background-size: cover;
     background-position: center;
     transition: all .3s;
+    text-align: center;
 }
 
 .main__menu ul li a:hover {
@@ -365,6 +376,111 @@ li {
     gap: 10px;
 }
 /*============header banner Area Start =============*/
+
+
+
+/*============mobile__menu Area Start =============*/
+.mobile__menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background: #2b2b2b;
+    z-index: 10;
+    padding-top: 20px;
+    max-width: 375px;
+    margin-left: -400px;
+    transition: all .3s ease-in-out;
+}
+
+.mobile__menu.sideBar {
+    margin: 0;
+}
+.mobile__menu .main__menu{
+    display: block;
+}
+
+.mobile__menu .main__menu ul {
+    display: block;
+}
+
+.mobile__menu .main__menu ul a {flex-direction: row;justify-content: start;height: auto;font-size: 20px;padding: 14px;max-width: 250px;}
+.mobile__menu .header__btm{
+    display: block;
+    padding: 10px 26px;
+    margin-bottom: 40px;
+    margin-top: 6px;
+}
+
+.mobile__menu .header__btm ul {
+    flex-direction: column;
+}
+
+.mobile__menu .header__btm ul  a {
+    font-size: 18px;
+    padding: 7px 14px;
+    border-radius: 9px;
+    border: none;
+    justify-content: start;
+    gap: 14px;
+    max-width: 220px;
+}
+
+.mobile__menu .header__btm ul a i {
+    width: 20px;
+    height: 20px;
+}
+
+.mobile__menu .header__btm ul a:after,.mobile__menu .header__btm ul a:before {
+    display: none;
+}
+
+.mobile__menu .close_btn {
+    position: absolute;
+    max-width: 30px;
+    right: 14px;
+    top: 14px;
+    filter: brightness(13.5) invert(1);
+}
+.mobile__menu .ht__left ul{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.mobile__menu {}
+
+.mobile__menu .header-top {
+    display: flex;
+    padding: 24px 20px;
+    box-sizing: border-box;
+    margin: 0;
+    width: 100% !important;
+    gap: 20px;
+}
+
+.mobile__menu .header-top > div {
+    width: 100%;
+    gap: 0;
+    display: block;
+}
+
+.mobile__menu ul.login__btns {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.mobile__menu ul.login__btns li {
+    width: 100%;
+}
+
+.mobile__menu .social__link {
+    margin-left: 20px;
+}
+/*============mobile__menu Area End =============*/
 
 /*============banner Area Start =============*/
 .banner-slider {
@@ -631,6 +747,12 @@ img.play-bg {
 }
 .casino__content {width: 70%;display: flex;border-radius: 30px;overflow: hidden;height: 400px;background: linear-gradient(17deg, rgba(1,48,131,1) 0%, rgba(4,5,9,1) 52%, rgba(17,93,174,1) 100%);}
 
+.casino__content > i img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .casino__content a {
     width: max-content;
     border: 1px solid var(--textColor);
@@ -649,6 +771,7 @@ img.play-bg {
 
 .casino__content > div {
     padding: 50px;
+    width: 65%;
 }
 
 .casino__content p {
@@ -663,10 +786,11 @@ img.play-bg {
     color: #fff;
     font-weight: 400;
     margin: 0;
+    margin-bottom: 10px;
 }
 
 .casino__content i {
-    max-width: 50%;
+    width: 50%;
 }
 /*============casino Area End =============*/
 
@@ -800,6 +924,7 @@ img.hpdrm-home-gallery-hover {
     justify-content: center;
     width: 100%;
     border-left: 1px solid;
+    text-align: center;
 }
 
 .Ftop__nav ul li:first-child a {
@@ -977,7 +1102,33 @@ img.hpdrm-home-gallery-hover {
 
 
 
+/*============Responsive Area  started =============*/
 
+
+
+/*Extra Big screen :1500px.+ */
+
+@media (min-width: 1501px) and (max-width: 1600px){
+    .ht__right .social__link {
+        display: none;
+    }
+    
+    .navStyle .owl-nav {
+        width: 105%;
+        left: -2%;
+    }
+    .banner-slider .owl-nav {
+        max-width: calc(100% - 80px);
+        left: 40px;
+    }
+    .navStyle .owl-nav img {
+        filter: brightness(13.5);
+    }
+    
+    .casino-area .container, .card-area .container, .gallery-area .container,.footer-area .container {
+        padding: 0 50px;
+    }
+}
 
 /* Big screen :1200px. */
 @media (min-width: 1200px) and (max-width: 1500px) {
@@ -986,7 +1137,995 @@ img.hpdrm-home-gallery-hover {
     left: -3%;
 }
 .container {
-  padding: 0 50px !important;
+  padding: 0 40px !important;
 }
+.ht__right .social__link {
+    display: none;
 }
 
+.navStyle .owl-nav {
+    width: 105%;
+    left: -2%;
+}
+.banner-slider .owl-nav {
+    max-width: calc(100% - 80px);
+    left: 40px;
+}
+.navStyle .owl-nav img {
+    filter: brightness(13.5);
+}
+.header__btm ul li a {
+    width: auto;
+    padding: 0 18px;
+}
+
+.ht__left {
+    gap: 20px;
+}
+
+.logo__area {
+    max-width: 120px;
+}
+
+.ht__left ul li a {
+    width: 136px;
+    height: 38px;
+}
+
+.login__btns li a {
+    width: 152px;
+    height: 38px;
+    font-weight: 600;
+}
+
+.main__menu {
+    padding: 0px 10px 10px;
+}
+
+.all-cards {
+    gap: 16px;
+}
+
+.cards__blk > i {
+    height: 120px;
+    scale: .8;
+}
+
+.cards__blk a {
+    width: 140px;
+    height: 38px;
+    gap: 10px;
+}
+.casino__content i {
+    width: 60%;
+}
+
+.casino__item {
+    height: 340px;
+}
+
+.casino__content {
+    height: 100%;
+}
+
+.casino__content a {
+    margin-top: 46px;
+}
+
+.brand-logo ul {
+    gap: 20px;
+}
+
+}
+
+
+@media (min-width: 992px) and (max-width: 1200px){
+    .navStyle .owl-nav{
+        width: 106.5%;
+        left: -3%;
+    }
+    .container {
+      padding: 0 40px !important;
+    }
+    .ht__right .social__link {
+        display: none;
+    }
+    
+    .navStyle .owl-nav {
+        width: 106%;
+        left: -2%;
+    }
+    .banner-slider .owl-nav {
+        max-width: calc(100% - 40px);
+        left: 20px;
+    }
+    .navStyle .owl-nav img {
+        filter: brightness(13.5);
+    }
+    .header__btm ul li a {
+        width: auto;
+        padding: 0 15px;
+        font-size: 13px;
+    }
+    
+    .ht__left {
+        gap: 20px;
+    }
+    
+    .logo__area {
+        max-width: 120px;
+    }
+    
+    .ht__left ul li a {
+        width: 120px;
+        height: 34px;
+        font-size: 13px;
+        gap: 10px;
+    }
+    
+    .login__btns li a {
+        width: 128px;
+        height: 34px;
+        font-weight: 600;
+        font-size: 12px;
+        gap: 10px;
+    }
+    
+    .main__menu {
+        padding: 0px 5px 10px;
+    }
+    
+    .all-cards {
+        gap: 16px;
+    }
+    
+    .cards__blk > i {
+        height: 120px;
+        scale: .8;
+        margin: 30px 0;
+    }
+    
+    .cards__blk a {
+        width: 126px;
+        height: 30px;
+        gap: 10px;
+        font-size: 12px;
+    }
+    .casino__content i {
+        width: 60%;
+    }
+    
+    .casino__item {
+        height: 340px;
+    }
+    
+    .casino__content {
+        height: 100%;
+    }
+    
+    .casino__content a {
+        margin-top: 46px;
+    }
+    
+    .brand-logo ul {
+        gap: 20px;
+    }
+    .header__info {
+        padding: 0 25px;
+    }
+    
+    .header-top {
+        padding: 20px 23px 30px;
+    }
+    
+    .header__btm {
+        padding: 0px 20px;
+    }
+    
+    .header__btm ul li a i {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .main__menu ul li a {
+        font-size: 13px;
+    }
+    
+    .ht__left ul li a i {
+        max-width: 15px;
+    }
+    
+    .login__btns li a i {
+        width: 14px;
+        height: 16px;
+    }
+    
+    .Yap__btn i {
+        width: 24px !important;
+        height: 24px ! IMPORTANT;
+    }
+    
+    .cards__blk a i {
+        width: 16px;
+    }
+    
+    .cards__blk h4 {
+        font-size: 18px;
+    }
+    
+    .cards__blk {
+        padding: 20px 0;
+    }
+    
+    .card-area {
+        padding: 60px 0;
+    }
+    
+    .casino__content p {
+        font-size: 16px;
+    }
+    
+    .casino__user a {
+        font-size: 16px;
+        height: 60px;
+    }
+    
+    .casino-slider.navStyle .owl-nav {
+        left: -3%;
+    }
+    
+    .hpdrm-home-title-left h3 {
+        font-size: 24px;
+    }
+    
+    .hpdrm-home-title-left p {
+        font-size: 16px;
+    }
+    
+    .footer__nav h5 {
+        font-size: 14px;
+    }
+    
+    .brand-logo ul li a {
+        height: 37px;
+    }
+    
+    .footer__apps ul {
+        gap: 10px;
+        justify-content: space-between;
+    }
+    
+    .footer__apps {
+        gap: 20px;
+    }
+    
+    .f__logo {
+        max-width: 200px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+    .navStyle .owl-nav{
+        width: 106.5%;
+        left: -3%;
+    }
+    .container {
+      padding: 0 40px !important;
+    }
+    .ht__right .social__link {
+        display: none;
+    }
+    
+    .navStyle .owl-nav {
+        width: 106%;
+        left: -2%;
+    }
+    .banner-slider .owl-nav {
+        max-width: calc(100% - 40px);
+        left: 20px;
+    }
+    .navStyle .owl-nav img {
+        filter: brightness(13.5);
+    }
+    .header__btm ul li a {
+        width: auto;
+        padding: 0 11px;
+        font-size: 12px;
+        gap: 7px;
+    }
+    
+    .ht__left {
+        gap: 20px;
+        display: block;
+    }
+    
+    .logo__area a {
+        max-width: 120px;
+    }
+
+.logo__area .barBtn {
+    display: block;
+    max-width: 32px;
+}
+
+.logo__area {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+    
+    .ht__left ul li a {
+    }
+    
+    .login__btns li a {
+    width: auto;
+    font-size: 14px;
+    }
+    
+    .main__menu {
+    display: none;
+    }
+    
+    .all-cards {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+    
+    .cards__blk > i {
+        height: 120px;
+        scale: .8;
+        margin: 45px 0;
+    }
+    
+    .cards__blk a {
+        width: 126px;
+        height: 30px;
+        gap: 10px;
+        font-size: 12px;
+    }
+    .casino__content i {
+        width: 60%;
+    }
+    
+    .casino__item {
+        height: 230px;
+    }
+    
+    .casino__content {
+        height: 100%;
+    }
+    
+    .casino__content a {
+        margin-top: 16px;
+        font-size: 14px;
+        width: 130px;
+        gap: 7px;
+        height: 35px;
+    }
+    
+    .brand-logo ul {
+        gap: 10px;
+    }
+    .header__info {
+        padding: 0 15px;
+        gap: 53px;
+    }
+    
+    .header-top {
+        width: calc(100% - 40px);
+        padding-right: 0;
+        max-width: 100%;
+        display: block;
+        padding: 0;
+        margin: 12px auto;
+    }
+    
+    .header__btm {
+        padding: 0px 20px;
+    }
+    
+    .header__btm ul li a i {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .main__menu ul li a {
+        font-size: 13px;
+    }
+    
+    .ht__left ul li a i {
+        max-width: 15px;
+    }
+    
+    .login__btns li a i {
+        width: 14px;
+        height: 16px;
+    }
+    
+    .Yap__btn i {
+        width: 24px !important;
+        height: 24px ! IMPORTANT;
+    }
+    
+    .cards__blk a i {
+        width: 16px;
+    }
+    
+    .cards__blk h4 {
+        font-size: 18px;
+    }
+    
+    .cards__blk {
+        padding: 20px 0;
+        width: 30%;
+    }
+    
+    .card-area {
+        padding: 60px 0;
+    }
+    
+    .casino__content p {
+        font-size: 14px;
+    }
+    
+    .casino__user a {
+        font-size: 14px;
+        height: 50px;
+    }
+    
+    .casino-slider.navStyle .owl-nav {
+        left: -3%;
+    }
+    
+    .hpdrm-home-title-left h3 {
+        font-size: 20px;
+    }
+    
+    .hpdrm-home-title-left p {
+        font-size: 15px;
+    }
+    
+    .footer__nav h5 {
+        font-size: 14px;
+    }
+    
+    .brand-logo ul li a {
+        height: 27px;
+    }
+    
+    .footer__apps ul {
+        gap: 10px;
+        justify-content: space-between;
+    }
+    
+    .footer__apps {
+        gap: 30px;
+    }
+    
+    .f__logo {
+        max-width: 175px;
+    }
+    .ht__left ul {
+        display: none;
+    }
+    
+    ul.login__btns {
+        display: none;
+    }
+    
+    .header__info a img {
+        width: 100%;
+        height: 34px;
+    }
+    
+    .header__btm ul {
+        gap: 3px;
+    }
+    
+    .header__btm ul li a:before, .header__btm ul li a:after {
+        opacity: .6;
+    }
+    
+    .banner-slider a {
+        border-radius: 20px;
+    }
+    
+    .dotStyle .owl-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .dotStyle .owl-dots {
+        gap: 5px;
+    }
+    
+    .banner-slider {
+        padding: 40px 0 30px;
+    }
+    
+    .casino__user {
+        border-radius: 20px;
+    }
+    
+    .casino__content > div {
+        padding: 20px;
+    }
+    
+    .casino__content h4 {
+        font-size: 20px;
+    }
+    
+    .casino__content a img {
+        max-width: 10px;
+    }
+    
+    .navStyle .owl-nav button {
+        width: 12px;
+    }
+    
+    .casino-area {
+        margin-bottom: 50px;
+    }
+    
+    .hpdrm-home-gallery .owl-stage-outer {
+        padding: 35px 11px;
+    }
+    
+    .hpdrm-home-gallery {
+        margin-bottom: 20px;
+    }
+    
+    .Ftop__nav ul li a {
+        font-size: 12px;
+        height: 32px;
+    }
+    
+    .Ftop__nav {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    
+    .footer__nav {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    
+    .brand-logo hr {
+        margin: 16px 0;
+    }
+    
+    .brand-logo {
+        margin-bottom: 50px;
+    }
+    
+    .qr__code {
+        max-width: 45px !important;
+    }
+    
+    .footer__apps__list i {
+        margin: 5px 0;
+    }
+    
+    .footer__apps__list {
+        gap: 10px;
+    }
+    
+    .footer__content {
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .footer__content p {
+        font-size: 13px;
+    }
+    
+    .side-icon {
+        max-width: 36px;
+    }
+}
+
+
+@media  (max-width: 767px){
+    .navStyle .owl-nav{
+    max-width: 45px;
+    position: unset;
+    height: auto;
+    margin: auto;
+    }
+    .container {
+      padding: 0 24px !important;
+    }
+    .ht__right .social__link {
+        display: none;
+    }
+    
+    .header-top {
+        width: calc(100% - 40px);
+        padding-right: 0;
+        max-width: 100%;
+        display: block;
+        padding: 0;
+        margin:  auto;
+        padding: 14px 0;
+    }
+    .banner-slider .owl-nav {
+        max-width: calc(100% - 40px);
+        left: 20px;
+        position: unset;
+        max-width: 45px;
+        height: auto;
+        margin: auto;
+        transform: translateY(46px);
+    }
+
+.banner-slider .owl-dots {
+    margin: 0;
+}
+    .navStyle .owl-nav img {
+        /* filter: brightness(13.5); */
+    }
+    .header__btm ul li a {
+    border: none;
+    justify-content: start;
+    }
+    
+    .ht__left {
+    }
+    
+    .logo__area a {
+        max-width: 105px;
+    }
+
+.logo__area {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo__area .barBtn {
+    display: block;
+    max-width: 32px;
+}
+    
+    .ht__left ul li a {
+        height: 34px;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .login__btns li a {
+        height: 34px;
+        font-weight: 600;
+        gap: 10px;
+        font-size: 13px;
+        width: 100%;
+    }
+    
+    .main__menu {
+    display: none;
+    }
+    
+    .all-cards {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .cards__blk > i {
+        height: 120px;
+        scale: .8;
+        margin: 16px 0;
+    }
+    
+    .cards__blk a {
+        width: 126px;
+        height: 30px;
+        gap: 10px;
+        font-size: 12px;
+    }
+    .casino__content i {
+        width: 100%;
+        height: 170px;
+    }
+    
+    .casino__item {
+        height: auto;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .casino__content {
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+        width: max-content;
+        margin: auto;
+    }
+    
+    .casino__content a {
+        margin-top: 16px;
+        font-size: 14px;
+        width: 130px;
+        gap: 7px;
+        height: 35px;
+        margin-inline: auto;
+    }
+    
+    .brand-logo ul {
+        gap: 22px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header__info {
+        padding: 0 5px;
+        gap: 53px;
+    }
+    
+    .header-top {
+    }
+    
+    .header__btm {
+    display: none;
+    }
+    
+    .header__btm ul li a i {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .main__menu ul li a {
+    }
+    
+    .ht__left ul li a i {
+        max-width: 15px;
+    }
+    
+    .login__btns li a i {
+        width: 14px;
+        height: 16px;
+    }
+    
+    .Yap__btn i {
+        width: 24px !important;
+        height: 24px ! IMPORTANT;
+    }
+    
+    .cards__blk a i {
+        width: 16px;
+    }
+    
+    .cards__blk h4 {
+        font-size: 16px;
+    }
+    
+    .cards__blk {
+        padding: 20px 0;
+        width: 48%;
+    }
+    
+    .card-area {
+        padding: 60px 0;
+    }
+    
+    .casino__content p {
+        font-size: 14px;
+        max-width: 301px;
+        margin: auto;
+        margin-bottom: 29px;
+        padding: 0 20px;
+    }
+    
+    .casino__user a {
+        font-size: 14px;
+        height: 50px;
+    }
+    
+    .casino-slider.navStyle .owl-nav {
+    margin-top: 37px;
+    }
+    
+    .hpdrm-home-title-left h3 {
+        font-size: 18px;
+    }
+    
+    .hpdrm-home-title-left p {
+        font-size: 14px;
+    }
+    
+    .footer__nav h5 {
+        font-size: 14px;
+    }
+    
+    .brand-logo ul li a {
+        height: 30px;
+        width: 54px;
+    }
+    
+    .footer__apps ul {
+        gap: 15px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .footer__apps {
+        gap: 30px;
+        flex-direction: column;
+    }
+    
+    .f__logo {
+        max-width: 175px;
+    }
+    .ht__left ul {
+        display: none;
+    }
+    
+    ul.login__btns {
+        display: none;
+    }
+    
+    .header__info a img {
+        width: 100%;
+        height: 23px;
+    }
+    
+    .header__btm ul {
+        gap: 3px;
+    }
+    
+    .header__btm ul li a:before, .header__btm ul li a:after {
+        opacity: .6;
+    }
+    
+    .banner-slider a {
+        border-radius: 10px;
+    }
+    
+    .dotStyle .owl-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .dotStyle .owl-dots {
+        gap: 5px;
+    }
+    
+    .banner-slider {
+        padding: 40px 0 53px;
+    }
+    
+    .casino__user {
+        border-radius: 20px;
+        display: none;
+        width: 0;
+    }
+    
+    .casino__content > div {
+        width: 100%;
+        padding: 20px 0;
+    }
+    
+    .casino__content h4 {
+        font-size: 20px;
+    }
+    
+    .casino__content a img {
+        max-width: 10px;
+    }
+    
+    .navStyle .owl-nav button {
+        width: 10px;
+    }
+    
+    .casino-area {
+        margin-bottom: 50px;
+    }
+    
+    .hpdrm-home-gallery .owl-stage-outer {
+        padding: 35px 0px;
+        margin: 0;
+    }
+    
+    .hpdrm-home-gallery {
+        margin-bottom: 20px;
+    }
+    
+    .Ftop__nav ul li a {
+        font-size: 14px;
+        height: 32px;
+        padding: 0 10px;
+        border: none;
+    }
+    
+    .Ftop__nav {
+    }
+    
+    .footer__nav {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+.footer__nav ul:last-child {
+    text-align: center;
+    width: 100%;
+}
+
+.footer__nav ul:last-child h5 {}
+
+.footer__nav ul:last-child h5:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+    
+    .brand-logo hr {
+        margin: 16px 0;
+    }
+    
+    .brand-logo {
+        margin-bottom: 50px;
+    }
+    
+    .qr__code {
+        max-width: 60px !important;
+    }
+    
+    .footer__apps__list i {
+        margin: 12px auto;
+    }
+    
+    .footer__apps__list {
+        gap: 22px;
+        text-align: center;
+    }
+    
+    .footer__content {
+        gap: 18px;
+        margin-bottom: 20px;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 25px;
+    }
+    
+    .footer__content p {
+        font-size: 13px;
+    }
+    
+    .side-icon {
+        max-width: 36px;
+    }
+    .header__info > a {
+        display: none;
+    }
+    
+    .header__info a {
+        height: 32px;
+    }
+    
+    .Ftop__nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .Ftop__nav ul li {
+        width: auto;
+    }
+    
+    .brand-logo ul li {
+        width: auto;
+    }
+    
+    .footer__nav ul:last-child .social__link {
+        justify-content: center;
+        text-align: center;
+        max-width: 100%;
+    }
+    .hpdrm-container {
+        background-size: cover;
+        background-position: top;
+    }
+}
