@@ -769,6 +769,14 @@ img.play-bg {
 }
 
 .casino__content a img {
+    transition: all .3s;
+}
+
+.casino__content a:hover img {
+    transform: translateX(10px);
+}
+
+.casino__content a img {
     max-width: 13px;
     object-fit: contain;
 }
